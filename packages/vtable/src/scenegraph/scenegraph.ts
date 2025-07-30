@@ -1,15 +1,4 @@
-import type { IStage, IRect, ITextCache, INode, Text, RichText, Stage, IRectGraphicAttribute } from '@src/vrender';
-import { createStage, createRect, IContainPointMode, container, vglobal, registerForVrender } from '@src/vrender';
-import type { CellRange, CellSubLocation } from '../ts-types';
-import {
-  type CellAddress,
-  type CellLocation,
-  type ColumnIconOption,
-  type SortOrder,
-  IconFuncTypeEnum,
-  InternalIconName
-} from '../ts-types';
-import { isArray, isString, isValid } from '@visactor/vutils';
+
 import type { Group } from './graphic/group';
 import type { Icon } from './graphic/icon';
 import { getCellMergeInfo } from './utils/get-cell-merge';
@@ -240,7 +229,7 @@ export class Scenegraph {
   initSceneGraph() {
     this.isPivot = this.table.isPivotTable();
     // (this.table as any).transpose = (this.table.options as any).transpose; // 初始化时this.table.transpose还未赋值
-
+    console.log('this.table.transpose', this.table);
     initSceneGraph(this);
   }
 
